@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+
   </div>
 </template>
 
@@ -7,14 +8,14 @@
 import "amis-ui/lib/themes/cxd.css";
 import "amis-ui/lib/themes/ang.css";
 import "amis-editor/dist/style.css";
-//import VueAmisSdk from "vue-amis-sdk"
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
   components: {
-    //VueAmisSdk: VueAmisSdk,
+    VueAmisSdk: VueAmisSdk,
   },
   data() {
     return {

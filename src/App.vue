@@ -1,31 +1,54 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <vue-amis-sdk
+    <vue-amis-editor
       id='editorName'
       theme='cxd'
       className='is-fixed'
-      :preview='isPreview'
-      :isMobile='isMobile'
-      @onChange='onChange'
+      :is-preview='isPreview'
       :value='schema'
     />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//mport HelloWorld from './components/HelloWorld.vue'
+import "amis-ui/lib/themes/cxd.css";
+import "amis-ui/lib/themes/ang.css";
+import "amis-editor/dist/style.css";
+import VueAmisEditor from 'vue-amis-editor'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //HelloWorld:HelloWorld,
+    VueAmisEditor,
   },
   data() {
     return {
       isPreview: false,
       isMobile: false,
-      schema: {}
+      schema:{
+        type: 'tasks',
+        name: 'tasks',
+        items: [
+          {
+            label: 'hive 任务',
+            key: 'hive',
+            status: 4,
+            remark: '查看详情<a target="_blank" href="http://www.baidu.com">日志</a>。',
+          },
+          {
+            label: '小流量',
+            key: 'partial',
+            status: 4,
+          },
+          {
+            label: '全量',
+            key: 'full',
+            status: 4,
+          },
+        ],
+        id: 'u:5f649ab86d6a',
+      },
     }
   },
   methods: {

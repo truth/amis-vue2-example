@@ -6,9 +6,9 @@ Vue.config.productionTip = false
 import "@fortawesome/fontawesome-free/css/all.css";
 import "@fortawesome/fontawesome-free/js/all";
 
-import VueAmisSdk from "vue-amis-sdk";
-Vue.use(VueAmisSdk);
-console.log(VueAmisSdk);
+// import VueAmisSdk from "vue-amis-sdk";
+// Vue.use(VueAmisSdk);
+//console.log(VueAmisSdk);
 import { VuePlugin } from "vuera";
 Vue.use(VuePlugin);
 
