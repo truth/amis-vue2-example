@@ -1,61 +1,78 @@
 <template>
   <div id="app">
-    <vue-amis-editor
-      id='editorName'
-      theme='cxd'
-      className='is-fixed'
-      :is-preview='isPreview'
-      :value='schema'
-    />
+    <HelloWorld  msg="hello"></HelloWorld>
+    <AmisEditor
+      id="editorName"
+      theme="cxd"
+      className="is-fixed"
+      :preview="isPreview"
+      :isMobile="isMobile"
+      @onChange="onChange"
+      :value="schema"
+     />
   </div>
 </template>
 
 <script>
-//mport HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
+import AmisEditor from "./components/AmisEditor/index.vue";
 import "amis-ui/lib/themes/cxd.css";
 import "amis-ui/lib/themes/ang.css";
 import "amis-editor/dist/style.css";
-import VueAmisEditor from 'vue-amis-editor'
 export default {
   name: 'App',
   components: {
-    //HelloWorld:HelloWorld,
-    VueAmisEditor,
+    HelloWorld,
+    AmisEditor,
   },
-  data() {
+   data() {
     return {
       isPreview: false,
       isMobile: false,
-      schema:{
-        type: 'tasks',
-        name: 'tasks',
-        items: [
+      schema: {
+        type: "page",
+        title: "23232",
+        body: [
           {
-            label: 'hive 任务',
-            key: 'hive',
-            status: 4,
-            remark: '查看详情<a target="_blank" href="http://www.baidu.com">日志</a>。',
-          },
-          {
-            label: '小流量',
-            key: 'partial',
-            status: 4,
-          },
-          {
-            label: '全量',
-            key: 'full',
-            status: 4,
+            type: "form",
+            title: "表单",
+            body: [
+              {
+                label: "文本框文本框文本框文本框",
+                type: "input-text",
+                name: "text",
+                id: "u:05a2a8b17444",
+              },
+            ],
+            id: "u:977658ae7520",
+            rules: [],
+            submitText: "提交",
+            actions: [
+              {
+                type: "button-group",
+                id: "u:85beb2f89589",
+              },
+            ],
+            mode: "horizontal",
           },
         ],
-        id: 'u:5f649ab86d6a',
+        id: "u:2ee616f71890",
+        aside: [],
+        regions: ["body"],
+        pullRefresh: {
+          disabled: true,
+        },
+        asideResizor: false,
+        asideSticky: true,
       },
-    }
+    };
   },
   methods: {
     onChange(e) {
-      console.log(e)
-    }
-  }
+      console.log(e);
+      console.log("hell0");
+    },
+  },
 }
 </script>
 
